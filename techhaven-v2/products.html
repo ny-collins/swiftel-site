@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>All Products - TechHaven</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="bg-light font-sans text-secondary dark:bg-secondary dark:text-light transition-colors duration-300">
+    <header class="sticky top-0 z-50 bg-light/80 dark:bg-secondary/80 backdrop-blur-lg border-b border-indigo-200 dark:border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
+            <a href="/" class="text-2xl font-bold text-primary dark:text-white">TechHaven</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/#products" class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Featured</a>
+                <a href="/products.html" class="text-primary dark:text-primary font-semibold transition-colors">All Products</a>
+                <a href="/#contact" class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+              <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" aria-label="Toggle theme"><i data-lucide="sun" class="w-6 h-6 block dark:hidden"></i><i data-lucide="moon" class="w-6 h-6 hidden dark:block"></i></button>
+              <a href="/cart.html" class="relative text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors z-50" aria-label="View Cart"><i data-lucide="shopping-cart" class="w-6 h-6"></i><span class="cart-count absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span></a>
+              <button id="hamburger-button" class="md:hidden z-[70] flex flex-col h-8 w-8 justify-center items-center space-y-1.5" aria-label="Open menu"><div class="hamburger-line top-line"></div><div class="hamburger-line middle-line"></div><div class="hamburger-line bottom-line"></div></button>
+            </div>
+        </nav>
+    </header>
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 z-[55] hidden"></div>
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-4/5 max-w-xs bg-light dark:bg-gray-900 z-[60] transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex items-center p-6 border-b border-indigo-200 dark:border-gray-800"><h2 class="text-xl font-bold text-primary dark:text-white">Menu</h2></div>
+        <div class="p-6 flex flex-col">
+            <a href="/products.html" class="text-lg text-gray-700 dark:text-gray-200 hover:text-primary py-4 border-b border-indigo-200 dark:border-gray-800">All Products</a>
+            <a href="#reviews" class="text-lg text-gray-700 dark:text-gray-200 hover:text-primary py-4 border-b border-indigo-200 dark:border-gray-800">Reviews</a>
+            <a href="#contact" class="text-lg text-gray-700 dark:text-gray-200 hover:text-primary py-4">Contact</a>
+        </div>
+    </div>
+    <main class="container mx-auto px-6 py-12 max-w-7xl">
+        <h1 class="text-4xl font-bold text-center dark:text-white">All Products</h1>
+        <p class="text-center text-gray-500 dark:text-gray-400 mt-2 mb-12">Browse our full collection of gadgets.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <aside id="filters-container" class="lg:col-span-1 bg-white dark:bg-gray-900 p-6 rounded-lg border border-indigo-200 dark:border-gray-800 h-fit lg:sticky top-28"><h2 class="text-xl font-semibold mb-4 dark:text-white">Categories</h2><div id="category-filters" class="space-y-2"></div></aside>
+            <section class="lg:col-span-3"><div id="all-products-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8"></div></section>
+        </div>
+    </main>
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

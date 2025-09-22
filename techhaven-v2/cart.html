@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Your Cart - TechHaven</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-light font-sans text-secondary dark:bg-secondary dark:text-light transition-colors duration-300">
+    
+    <header class="sticky top-0 z-50 bg-light/80 dark:bg-secondary/80 backdrop-blur-lg border-b border-indigo-100 dark:border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
+            <a href="/" class="text-2xl font-bold text-primary dark:text-white">TechHaven</a>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" aria-label="Toggle theme">
+                    <i data-lucide="sun" class="w-6 h-6 block dark:hidden"></i>
+                    <i data-lucide="moon" class="w-6 h-6 hidden dark:block"></i>
+                </button>
+                <a href="/" class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors font-medium hidden sm:flex items-center space-x-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>Continue Shopping</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-16 max-w-7xl">
+        <div id="cart-page-container">
+            <h1 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white">Your Shopping Cart</h1>
+            <div id="cart-content" class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div id="cart-items" class="lg:col-span-2 space-y-4"></div>
+                <div id="cart-summary" class="lg:col-span-1 bg-white dark:bg-gray-900 p-6 rounded-lg border border-indigo-100 dark:border-gray-800 sticky top-28">
+                    <h2 class="text-xl font-bold border-b border-gray-200 dark:border-gray-700 pb-4 mb-4 dark:text-white">Order Summary</h2>
+                    <div class="space-y-2 mb-4 text-gray-600 dark:text-gray-300"><div class="flex justify-between"><span>Subtotal</span><span id="summary-subtotal">KES 0</span></div><div class="flex justify-between"><span>Shipping</span><span>FREE</span></div></div>
+                    <div class="flex justify-between font-bold text-lg border-t border-gray-200 dark:border-gray-700 pt-4 mt-4 dark:text-white"><span>Total</span><span id="summary-total">KES 0</span></div>
+                    <button class="w-full mt-6 bg-primary text-white font-semibold py-3 rounded-lg hover:bg-primary/90 transition-colors">Proceed to Checkout</button>
+                </div>
+            </div>
+            <div id="cart-empty" class="hidden text-center py-16">
+                <i data-lucide="shopping-cart" class="mx-auto h-24 w-24 text-gray-300 dark:text-gray-700"></i>
+                <h2 class="mt-4 text-2xl font-bold dark:text-white">Your cart is empty</h2>
+                <p class="mt-2 text-gray-500 dark:text-gray-400">Looks like you haven't added anything to your cart yet.</p>
+                <a href="/#products" class="mt-6 bg-primary text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 inline-block">Start Shopping</a>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
